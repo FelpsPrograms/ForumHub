@@ -52,7 +52,9 @@ public class TopicoController {
         if (id <= 0) {
             throw new IdNegativoException("ID passado na url deve ser positivo!");
         }
+
         Topico topicoEncontrado = repository.getReferenceById(id);
+
         return ResponseEntity.ok(new DadosListagemTopico(topicoEncontrado));
     }
 
@@ -68,6 +70,15 @@ public class TopicoController {
         topico.atualizarTopico(dados);
 
         return ResponseEntity.ok(new DadosListagemTopico(topico));
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity deletar(@PathVariable Long id) {
+        Topico topico = repository.getReferenceById(id);
+        topico.deletar();
+
+        return ResponseEntity.noContent().build();
     }
 
 }

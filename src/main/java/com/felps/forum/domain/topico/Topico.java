@@ -45,5 +45,7 @@ public class Topico {
 
     }
 
-
+    public void deletar() {
+        this.status = StatusTopico.DELETADO;
+    }
 }
