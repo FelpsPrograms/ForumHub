@@ -2,7 +2,7 @@ package com.felps.forum.domain.topico;
 
 import java.time.LocalDateTime;
 
-public record DadosDetalhamentoTopico(
+public record DadosListagemTopico(
 
         String titulo,
         String mensagem,
@@ -12,7 +12,7 @@ public record DadosDetalhamentoTopico(
         String curso
 
 ) {
-    public DadosDetalhamentoTopico(Topico topico) {
+    public DadosListagemTopico(Topico topico) {
         this(topico.getTitulo(),
                 topico.getMensagem(),
                 topico.getDataCriacao(),
