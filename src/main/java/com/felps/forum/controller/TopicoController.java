@@ -47,7 +47,11 @@ public class TopicoController {
                 .map(DadosListagemTopico::new);
 
         return ResponseEntity.ok(page);
+    }
 
-
+    @GetMapping("/{id}")
+    public ResponseEntity detalhar(@PathVariable Long id) {
+        Topico topicoEncontrado = repository.getReferenceById(id);
+        return ResponseEntity.ok(new DadosListagemTopico(topicoEncontrado));
     }
 }
