@@ -46,7 +46,7 @@ CREATE TABLE `flyway_schema_history` (
 
 LOCK TABLES `flyway_schema_history` WRITE;
 /*!40000 ALTER TABLE `flyway_schema_history` DISABLE KEYS */;
-INSERT INTO `flyway_schema_history` VALUES (1,'1','create-table-topico','SQL','V1__create-table-topico.sql',-288513154,'root','2024-07-15 14:48:05',38,1),(2,'2','create-table-resposta','SQL','V2__create-table-resposta.sql',-388280810,'root','2024-07-15 14:48:05',65,1);
+INSERT INTO `flyway_schema_history` VALUES (1,'1','create-table-topico','SQL','V1__create-table-topico.sql',-288513154,'root','2024-07-15 14:48:05',38,1),(2,'2','create-table-resposta','SQL','V2__create-table-resposta.sql',-388280810,'root','2024-07-15 14:48:05',65,1),(3,'3','create-table-usuario','SQL','V3__create-table-usuario.sql',1891724290,'root','2024-07-16 12:26:03',69,1);
 /*!40000 ALTER TABLE `flyway_schema_history` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -104,6 +104,31 @@ LOCK TABLES `topico` WRITE;
 INSERT INTO `topico` VALUES (1,'Comentário','Gostaria de compartilhar algo com vocês','2024-07-15 11:48:29','NAO_RESPONDIDO','JoãoProgramador','Spring Boot 3'),(2,'Problema','consegui!','2024-07-15 15:46:18','DELETADO','PedrinhoProgramas','Spring Boot 3');
 /*!40000 ALTER TABLE `topico` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `usuario`
+--
+
+DROP TABLE IF EXISTS `usuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `usuario` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `login` varchar(100) NOT NULL,
+  `senha` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuario`
+--
+
+LOCK TABLES `usuario` WRITE;
+/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES (1,'felps','$2a$10$Y50UaMFOxteibQEYLrwuHeehHYfcoafCopUazP12.rqB41bsolF5.');
+/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -114,4 +139,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-15 16:04:51
+-- Dump completed on 2024-07-16 10:44:52
