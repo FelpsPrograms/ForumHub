@@ -1,4 +1,7 @@
-# Fórum Hub
+# ![](https://github.com/FelpsPrograms/ForumHub/blob/main/forum_logo.png)
+
+
+![](http://img.shields.io/static/v1?label=STATUS&message=TERMINADO&color=GREEN&style=for-the-badge)
 
 Este projeto Java desenvolve uma API Rest, simulando um fórum de dúvidas e discussões sobre cursos.
 
